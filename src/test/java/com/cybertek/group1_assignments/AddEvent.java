@@ -36,6 +36,8 @@ public class AddEvent {
         vehicle.click();
         WebElement licenseCLick = driver.findElement(By.xpath("//td[.='Cybertek123']"));
         licenseCLick.click();
+        //find element title of the current page
+        String currentTitle = driver.getTitle();
         Thread.sleep(3000);
         WebElement addEvent = driver.findElement(By.xpath("//a[@class='btn icons-holder-text no-hash']"));
         addEvent.click();
@@ -47,8 +49,14 @@ public class AddEvent {
 
         WebElement title = driver.findElement(By.xpath("//irm_title-uid-60b67e6215749']nput[@id='oro_calendar_event_fo"));
         title.sendKeys("Group1Assignment");
-        WebElement ownerButton = driver.findElement(By.className("add-on btn entity-select-btn"));
-        ownerButton.click();
+        //WebElement ownerButton = driver.findElement(By.className("add-on btn entity-select-btn"));
+        //ownerButton.click();
+        WebElement saveButton = driver.findElement(By.xpath("//button[.='Save']"));
+        saveButton.click();
+
+        driver.switchTo().window(currentTitle);
+
+
 
     }
 }
