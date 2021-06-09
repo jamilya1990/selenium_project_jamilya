@@ -15,9 +15,17 @@ public class ConfigurationReader {
 
         //#3 - load properties object with the file(configuration.properties)
             properties.load(file);
+
+        //#4 - close file
+            file.close();
         } catch (IOException e) {
             System.out.println("Jamilya, file not found in configurations.properties.");
         }
+    }
+    //Use the above created logic to create a re-usable static method:
+
+    public static String getProperty(String keyWord){
+        return properties.getProperty(keyWord);
     }
 
 

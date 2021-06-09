@@ -47,7 +47,7 @@ public class AddCalendarEvent {
         System.out.println(currentTitle);
         BrowserUtils.sleep(4);
         WebElement title = driver.findElement(By.xpath("(//input[contains(@id,'oro_calendar_event_form')])[2]"));
-        String textToSend = "Group1 Assignment";
+        String textToSend = "Group1 Assignment 06/07/2021 10:25 AM";
         title.sendKeys(textToSend);
         BrowserUtils.sleep(4);
         WebElement saveAndSubmitButton = driver.findElement(By.xpath("//button[@class='btn btn-success action-button']"));
