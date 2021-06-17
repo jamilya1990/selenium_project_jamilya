@@ -30,4 +30,21 @@ public class TableUtils {
         //Assert.fail("any error message goes here. It will fail the code") - will fail the test and not continue execution
         Assert.assertTrue(false, "Name does not exist in the list");
     }
+    //Practice #5:
+    // Method: printNamesAndEmails
+    // •Create a method named print Names And  Emails  in TableUtils class.
+    // •Method takes WebDriver object.
+    // •This method should simply print all the names and emails in the table
+    // •Create a new TestNG test to test if the method is working as expected.
+    // •Output should be like:
+    // •Name1: name , Email1: email
+    // •Name2: name , Email2: email
+
+    public static void printNamesAndEmails(WebDriver driver){
+        List<WebElement> allNames = driver.findElements(By.xpath("//table[@id='table1']//tr/td[2]"));
+        List<WebElement> allEmails = driver.findElements(By.xpath("//table[@id='table1']//tr/td[3]"));
+        for (int i = 0, j=0; i < allNames.size(); i++, j++) {
+            System.out.println("Name" + (i+1) + ": "+allNames.get(i).getText()+", Email" + (j+1) + ": " + allEmails.get(j).getText());
+        }
+    }
 }

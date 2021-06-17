@@ -47,6 +47,10 @@ public class TableTask3 {
         TableUtils.verifyOrder(driver,"Tim");
 
     }
+    @Test
+    public void task5_printAllNamesEmails(){
+        TableUtils.printNamesAndEmails(driver);
+    }
 
     @AfterMethod
     public void tearDown(){
