@@ -7,6 +7,9 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * !!! To use this class we have to extent our classes to this TestBase class
+ */
 public abstract class TestBase {
    public WebDriver driver;
     @BeforeMethod
@@ -22,7 +25,7 @@ public abstract class TestBase {
     }
 }
 class Test extends TestBase{
-    public void setupMethod(){
-
+    public void tearDownMethod(){
+        driver.close();
     }
 }
